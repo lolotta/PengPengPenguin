@@ -7,8 +7,8 @@ public class VaccineManagerScript : MonoBehaviour
     [SerializeField] 
     private GameObject _vaccinePrefab;
 
-    [SerializeField]
-    private float _vaccinationRate = 0.4f;
+    
+    private float _vaccinationRate = 0.8f;
 
     private float _timeToVaccinate = 0f;
 
@@ -17,7 +17,7 @@ public class VaccineManagerScript : MonoBehaviour
 
     private bool _powerUpOn = false;
 
-    private float _powerUpTime = 10f;
+    private float _powerUpTime = 5f;
 
     private float _powerDownAt;
     // Start is called before the first frame update
@@ -31,13 +31,18 @@ public class VaccineManagerScript : MonoBehaviour
             _vaccinationRate = 0.4f;
             _powerUpOn = true;
             _powerDownAt = Time.time + _powerUpTime;
+            
 
         }
     
      public void PowerDown()
         {
-            _vaccinationRate = 0.4f;
+            _vaccinationRate = 0.8f;
             _powerUpOn = false;
+            foreach(var child in GetComponentsInChildren<VaccineScript>())
+            {
+                child.PowerDown();
+            }
         }
 
     // Update is called once per frame
@@ -47,11 +52,18 @@ public class VaccineManagerScript : MonoBehaviour
         {
             _timeToVaccinate = Time.time + _vaccinationRate;
             Instantiate(_vaccinePrefab, _player.transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity, this.transform);
+            
         }
 
-        if (_powerUpOn && Time.time >= _powerDownAt)
+        if (_powerUpOn && Time.time > _powerDownAt)
         {
             PowerDown();
+        } else if (_powerUpOn)
+        {
+            foreach(var child in GetComponentsInChildren<VaccineScript>())
+            {
+                child.PowerOn();
+            }
         }
     }
 

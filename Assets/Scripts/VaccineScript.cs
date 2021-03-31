@@ -5,8 +5,21 @@ using UnityEngine;
 public class VaccineScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
+    
     private float _speed = 4f;
+
+    private bool _powerUpOn = false;
+
+    public void PowerOn()
+    {
+        _powerUpOn = true;
+    }
+
+    public void PowerDown()
+    {
+        _powerUpOn = false;
+
+    }
 
 
 
@@ -20,6 +33,19 @@ public class VaccineScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+        if (_powerUpOn)
+        {
+            transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+
+        }
+        else
+        {
+            transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+
+        }
+        
+        
         
     }
 

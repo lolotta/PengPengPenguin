@@ -17,9 +17,10 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/PowerUpManagerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level_upScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/VaccineManagerScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PowerUpScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PowerUpScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VaccineScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VaccineManagerScript.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qWjKeOjkMMB9LAcSfqsvmNQPk5" />
@@ -62,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617202179345</updated>
-      <workItem from="1617202187755" duration="3194000" />
+      <workItem from="1617202187755" duration="6076000" />
     </task>
     <servers />
   </component>
