@@ -13,7 +13,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1323c015-84e6-1662-8f8b-14512177c69c}</ProjectGuid>
+    <ProjectGuid>{ef092da6-fa56-fe79-e25e-928a988af9a6}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -54,12 +54,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\VaccineScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\LevelUpManagerScript.cs" />
+     <Compile Include="Assets\Scripts\PowerUpManagerScript.cs" />
+     <Compile Include="Assets\Scripts\PowerUpScript.cs" />
+     <Compile Include="Assets\Scripts\Level_upScript.cs" />
      <Compile Include="Assets\Scripts\SpawnManagerScript.cs" />
      <Compile Include="Assets\Scripts\CoronaScript.cs" />
      <Compile Include="Assets\DNA\Scripts\RotateModel.cs" />
      <Compile Include="Assets\Scripts\VaccineManagerScript.cs" />
-     <Compile Include="Assets\Scripts\Level_upScript.cs" />
-     <Compile Include="Assets\Scripts\LevelUpManagerScript.cs" />
      <None Include="Assets\Third Party\corona\Planets\shader\two_side_shader.shader" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity Editors/2020.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -629,31 +631,31 @@
  <HintPath>C:/Program Files/Unity Editors/2020.3.0f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Lotta/Desktop/Intro to Unity/Projects/First Unity try/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Lotta/Documents/GitHub/CoronaPewPew/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

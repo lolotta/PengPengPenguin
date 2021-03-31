@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private SpawnManagerScript _spawnManager;
     [SerializeField] private GameObject _vaccineManager;
     [SerializeField] private GameObject _levelUpManager;
+    [SerializeField] private GameObject _powerUpManager;
 
 
     
@@ -41,6 +42,11 @@ public class PlayerScript : MonoBehaviour
     {
         _lives++;
     }
+
+    public void PowerUp()
+    {
+        _vaccineManager.GetComponent<VaccineManagerScript>().PowerUp();
+    }
     public void Damage()
     {
         _lives--;
@@ -70,6 +76,14 @@ public class PlayerScript : MonoBehaviour
             if (_levelUpManager != null)
             {
                 _levelUpManager.GetComponent<LevelUpManagerScript>().onPlayerDeath();
+            }
+            else
+            {
+                Debug.LogError("level up manager not assigned, idiot");
+            }
+            if (_powerUpManager != null)
+            {
+                _powerUpManager.GetComponent<PowerUpManagerScript>().onPlayerDeath();
             }
             else
             {
