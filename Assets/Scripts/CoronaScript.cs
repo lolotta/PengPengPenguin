@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 
 public class CoronaScript : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed = 5f;
+    
+    private float _speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,8 @@ public class CoronaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * _speed * Time.deltaTime);
+        _speed = Random.Range(3.0f, 5.0f); 
+            transform.Translate(Vector3.down * _speed * Time.deltaTime);
         if (transform.position.y < -5)
         {
             transform.position = new Vector3(
