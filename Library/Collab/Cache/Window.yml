@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scripts/SoundManagerScript.cs
+    - Assets/Scripts/Level_upScript.cs
+    - Assets/Scripts/PlayerScript.cs
     - 
-    m_Values: 0101
-  RevisionSummary: 
+    m_Values: 010101
+  RevisionSummary: health only appears when lives <3
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

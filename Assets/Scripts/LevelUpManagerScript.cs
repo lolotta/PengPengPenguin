@@ -10,8 +10,8 @@ public class LevelUpManagerScript : MonoBehaviour
     private GameObject _level_up_prefab;
 
     [SerializeField] private float _delay = 5f;
-    
-    
+
+    [SerializeField] private GameObject _player;
 
     private bool _spawningON = true;
     void Start()
@@ -40,7 +40,10 @@ public class LevelUpManagerScript : MonoBehaviour
     {
         while (_spawningON)
         {
-            Instantiate(_level_up_prefab, new Vector3(Random.Range(-8f, 8f), 7f, 0f), Quaternion.identity, this.transform);
+            if (_player.GetComponent<PlayerScript>().Lives() < 3)
+            {
+                Instantiate(_level_up_prefab, new Vector3(Random.Range(-8f, 8f), 7f, 0f), Quaternion.identity, this.transform);
+            }
             yield return new WaitForSeconds(_delay);
 
         }

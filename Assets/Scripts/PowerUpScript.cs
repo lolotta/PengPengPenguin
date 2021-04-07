@@ -9,6 +9,8 @@ public class PowerUpScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManagerScript.PlaySound("InstantiatePowerUp");
+
     }
 
     // Update is called once per frame

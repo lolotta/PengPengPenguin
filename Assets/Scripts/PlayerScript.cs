@@ -14,20 +14,14 @@ public class PlayerScript : MonoBehaviour
     
    
 
-    [SerializeField] private int _lives = 3;
+    [SerializeField] public int _lives = 3;
     
-    //private float _colorChannel = 1f;
-    //private MaterialPropertyBlock _abp;
+   
     [SerializeField] private UI_Manager _uiManager; 
     
     void Start()
     {
-        /*if (_abp == null)
-        {
-            _abp = new MaterialPropertyBlock();
-            _abp.Clear();
-            this.GetComponent<Renderer>().GetPropertyBlock(_abp);
-        }*/
+        
         transform.position = new Vector3(0, 0, 0);
 
     }
@@ -37,9 +31,12 @@ public class PlayerScript : MonoBehaviour
        PlayerMovement();
     }
 
+    // adds a live and updates the UI
     public void Heal()
     {
         _lives++;
+        _uiManager.AddLife(power: 1);
+        
     }
 
     public void PowerUp()
@@ -58,7 +55,12 @@ public class PlayerScript : MonoBehaviour
     {
         _uiManager.LostLife(damage);
     }
-    
+
+    //returns the current number of lives
+    public int Lives()
+    {
+        return _lives;
+    }
     public void Damage()
     {
         _lives--;

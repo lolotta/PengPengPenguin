@@ -26,6 +26,12 @@ public class UI_Manager : MonoBehaviour
         
     }
 
+    public void AddLife(int power)
+    {
+        _life += power;
+        _lifeText.text = "Health: " + _life; 
+    }
+
     void Start()
     {
         _scoreText.text = "Score: " + _score;
