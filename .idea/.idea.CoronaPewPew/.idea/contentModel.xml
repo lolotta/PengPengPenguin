@@ -18,7 +18,9 @@
           <e p="PlayerScript.cs" t="Include" />
           <e p="PowerUpManagerScript.cs" t="Include" />
           <e p="PowerUpScript.cs" t="Include" />
+          <e p="SoundManagerScript.cs" t="Include" />
           <e p="SpawnManagerScript.cs" t="Include" />
+          <e p="UI_Manager.cs" t="Include" />
           <e p="VaccineManagerScript.cs" t="Include" />
           <e p="VaccineScript.cs" t="Include" />
         </e>

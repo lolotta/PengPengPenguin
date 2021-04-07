@@ -41,6 +41,8 @@ public class PowerUpManagerScript : MonoBehaviour
         while (_spawningON)
         {
             Instantiate(_power_up_prefab, new Vector3(Random.Range(-8f, 8f), 7f, 0f), Quaternion.identity, this.transform);
+            SoundManagerScript.PlaySound("InstantiatePowerUp");
+
             yield return new WaitForSeconds(_delay);
 
         }

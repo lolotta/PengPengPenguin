@@ -53,9 +53,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\VaccineScript.cs" />
+     <Compile Include="Assets\Scripts\UI_Manager.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\LevelUpManagerScript.cs" />
      <Compile Include="Assets\Scripts\PowerUpManagerScript.cs" />
+     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
      <Compile Include="Assets\Scripts\PowerUpScript.cs" />
      <Compile Include="Assets\Scripts\Level_upScript.cs" />
      <Compile Include="Assets\Scripts\SpawnManagerScript.cs" />

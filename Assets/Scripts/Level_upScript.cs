@@ -25,7 +25,7 @@ public class Level_upScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerScript>().Heal();
-            Debug.Log("Heal");
+            SoundManagerScript.PlaySound("levelUp");
             Destroy(this.gameObject);
         }
         

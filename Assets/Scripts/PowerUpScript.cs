@@ -25,6 +25,8 @@ public class PowerUpScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerScript>().PowerUp();
+            SoundManagerScript.PlaySound("powerUp");
+
             Destroy(this.gameObject);
         }
         

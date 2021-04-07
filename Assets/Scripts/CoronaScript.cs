@@ -18,7 +18,7 @@ public class CoronaScript : MonoBehaviour
     void Update()
     {
         _speed = Random.Range(3.0f, 5.0f); 
-            transform.Translate(Vector3.down * _speed * Time.deltaTime);
+        transform.Translate(Vector3.down * (_speed * Time.deltaTime));
         if (transform.position.y < -5)
         {
             transform.position = new Vector3(
@@ -36,11 +36,15 @@ public class CoronaScript : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
+            SoundManagerScript.PlaySound("loseLife");
+            GameObject.FindWithTag("Player").GetComponent<PlayerScript>().HealthCount(1);
             other.GetComponent<PlayerScript>().Damage();
             Destroy(this.gameObject);
         }
         else if (other.CompareTag("vaccine"))
         {
+            SoundManagerScript.PlaySound("hitCorona");
+            GameObject.FindWithTag("Player").GetComponent<PlayerScript>().ScoreCount(1);
             Destroy(other.gameObject);
             Destroy(this.gameObject);
 

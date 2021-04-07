@@ -11,15 +11,14 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private GameObject _vaccineManager;
     [SerializeField] private GameObject _levelUpManager;
     [SerializeField] private GameObject _powerUpManager;
-
-
     
+   
 
     [SerializeField] private int _lives = 3;
     
     //private float _colorChannel = 1f;
     //private MaterialPropertyBlock _abp;
-
+    [SerializeField] private UI_Manager _uiManager; 
     
     void Start()
     {
@@ -47,6 +46,19 @@ public class PlayerScript : MonoBehaviour
     {
         _vaccineManager.GetComponent<VaccineManagerScript>().PowerUp();
     }
+
+    // ScoreCount is called in Corona and adds our scores
+    public void ScoreCount(int score)
+    {
+        _uiManager.AddScore(score);
+    }
+    
+    //health count is called in corona and distracts life
+    public void HealthCount(int damage)
+    {
+        _uiManager.LostLife(damage);
+    }
+    
     public void Damage()
     {
         _lives--;
@@ -89,6 +101,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.LogError("level up manager not assigned, idiot");
             }
+            SoundManagerScript.PlaySound("die");
 
             Destroy(this.gameObject);
         }

@@ -52,6 +52,8 @@ public class VaccineManagerScript : MonoBehaviour
         {
             _timeToVaccinate = Time.time + _vaccinationRate;
             Instantiate(_vaccinePrefab, _player.transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity, this.transform);
+            SoundManagerScript.PlaySound("shoot");
+
             
         }
 
