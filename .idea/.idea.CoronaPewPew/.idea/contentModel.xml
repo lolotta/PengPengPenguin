@@ -12,6 +12,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="CloudScript.cs" t="Include" />
           <e p="CoronaScript.cs" t="Include" />
           <e p="Level_upScript.cs" t="Include" />
           <e p="LevelUpManagerScript.cs" t="Include" />
@@ -24,6 +25,7 @@
           <e p="UI_Manager.cs" t="Include" />
           <e p="VaccineManagerScript.cs" t="Include" />
           <e p="VaccineScript.cs" t="Include" />
+          <e p="WaveScript.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
