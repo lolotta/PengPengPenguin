@@ -4,39 +4,61 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed = 7f;
+    [SerializeField] private float _speed = 7f;
 
     [SerializeField] private SpawnManagerScript _spawnManager;
     [SerializeField] private GameObject _vaccineManager;
     [SerializeField] private GameObject _levelUpManager;
     [SerializeField] private GameObject _powerUpManager;
-    
-   
+    [SerializeField] private GameObject _backgroundManager;
+
 
     [SerializeField] public int _lives = 3;
-    
-   
-    [SerializeField] private UI_Manager _uiManager; 
-    
+
+
+    [SerializeField] private UI_Manager _uiManager;
+
     void Start()
     {
-        
         transform.position = new Vector3(0, 0, 0);
-
     }
 
     void Update()
     {
-       PlayerMovement();
+        PlayerMovement();
+        if (_uiManager.GetScore() == 3)
+        {
+            SoundManagerScript.PlaySound("nextLevel");
+            SunsetLevel();
+        }
+        if (_uiManager.GetScore() == 96)
+        {
+            SoundManagerScript.PlaySound("nextLevel");
+
+            NightLevel();
+        }
     }
 
+    public void SunsetLevel()
+    {
+        _backgroundManager.GetComponent<BackgroundManagerScript>().Sunset();
+        _spawnManager.SunsetLevel();
+        ScoreCount(90);
+        
+    }
+    
+    public void NightLevel()
+    {
+        _backgroundManager.GetComponent<BackgroundManagerScript>().Night();
+        _spawnManager.NightLevel();
+        ScoreCount(90);
+        
+    }
     // adds a live and updates the UI
     public void Heal()
     {
         _lives++;
         _uiManager.AddLife(power: 1);
-        
     }
 
     public void PowerUp()
@@ -49,7 +71,7 @@ public class PlayerScript : MonoBehaviour
     {
         _uiManager.AddScore(score);
     }
-    
+
     //health count is called in corona and distracts life
     public void HealthCount(int damage)
     {
@@ -61,6 +83,7 @@ public class PlayerScript : MonoBehaviour
     {
         return _lives;
     }
+
     public void Damage()
     {
         _lives--;
@@ -68,7 +91,7 @@ public class PlayerScript : MonoBehaviour
         /*_colorChannel -= 0.5f;
         _abp.SetColor("_Color", new Color(_colorChannel, 0, _colorChannel, 1f));
         this.GetComponent<Renderer>().SetPropertyBlock(_abp);*/
-        
+
         if (_lives <= 0)
         {
             if (_spawnManager != null)
@@ -79,6 +102,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.LogError("Spawn manager not assigned, idiot");
             }
+
             if (_vaccineManager != null)
             {
                 _vaccineManager.GetComponent<VaccineManagerScript>().DestroyVaccines();
@@ -87,6 +111,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.LogError("vaccine manager not assigned, idiot");
             }
+
             if (_levelUpManager != null)
             {
                 _levelUpManager.GetComponent<LevelUpManagerScript>().onPlayerDeath();
@@ -95,6 +120,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.LogError("level up manager not assigned, idiot");
             }
+
             if (_powerUpManager != null)
             {
                 _powerUpManager.GetComponent<PowerUpManagerScript>().onPlayerDeath();
@@ -103,6 +129,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.LogError("level up manager not assigned, idiot");
             }
+
             SoundManagerScript.PlaySound("die");
 
             Destroy(this.gameObject);
@@ -133,7 +160,7 @@ public class PlayerScript : MonoBehaviour
                 -3.5f,
                 0);
         }
-        
+
         if (transform.position.x > 11.4f)
         {
             transform.position = new Vector3(-11.4f,
@@ -147,5 +174,4 @@ public class PlayerScript : MonoBehaviour
                 0);
         }
     }
-    
 }

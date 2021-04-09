@@ -9,13 +9,16 @@ public class SpawnManagerScript : MonoBehaviour
     [SerializeField]
     private GameObject _virusPrefab;
 
-    [SerializeField] private float _delay = 3f;
-    
+    private float _delay;
+    private float _delayRange;
     
 
     private bool _spawningON = true;
+    private bool _sunsetON = false;
+    private bool _nightON = false;
     void Start()
     {
+        _delayRange = 2f;
         StartCoroutine(SpawnSystem());
     }
 
@@ -32,6 +35,21 @@ public class SpawnManagerScript : MonoBehaviour
             
     }
 
+    //spawning gets faster
+    public void SunsetLevel()
+    {
+        _delayRange = 1.5f;
+        _sunsetON = true;
+
+    }
+    
+    public void NightLevel()
+    {
+        _delayRange = 1f;
+        _sunsetON = false;
+        _nightON = true;
+
+    }
     public void onPlayerDeath()
     {
         _spawningON = false;
@@ -40,7 +58,26 @@ public class SpawnManagerScript : MonoBehaviour
     {
         while (_spawningON)
         {
+            _delay = Random.Range(_delayRange, _delayRange + 1f);
             Instantiate(_virusPrefab, new Vector3(Random.Range(-8f, 8f), 7f, 0f), Quaternion.identity, this.transform);
+            
+            //make sure that all coronas are in sunset mode
+            if (_sunsetON){
+                foreach (Transform child in this.transform)
+                {
+                    child.GetComponent<CoronaScript>().SunsetLevel();
+                }
+                
+            }
+            
+            if (_nightON){
+                foreach (Transform child in this.transform)
+                {
+                    child.GetComponent<CoronaScript>().NightLevel();
+                }
+                
+            }
+            
             yield return new WaitForSeconds(_delay);
 
         }

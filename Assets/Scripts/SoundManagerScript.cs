@@ -12,7 +12,8 @@ public class SoundManagerScript : MonoBehaviour
         levelUpSound,
         powerUpSound,
         loseLifeSound,
-        playerDeathSound;
+        playerDeathSound,
+        nextLevelSound;
 
     private static AudioSource audioSrc;
     
@@ -26,6 +27,7 @@ public class SoundManagerScript : MonoBehaviour
         powerUpSound = Resources.Load<AudioClip>("power up");
         loseLifeSound = Resources.Load<AudioClip>("wlum");
         playerDeathSound = Resources.Load<AudioClip>("sad");
+        nextLevelSound = Resources.Load<AudioClip>("didudu");
 
 
 
@@ -68,6 +70,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "die":
                 audioSrc.PlayOneShot(playerDeathSound, 0.3f);
+                break;
+            case "nextLevel":
+                audioSrc.PlayOneShot(nextLevelSound, 0.6f);
                 break;
         }
     }

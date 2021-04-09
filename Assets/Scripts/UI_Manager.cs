@@ -32,6 +32,10 @@ public class UI_Manager : MonoBehaviour
         _lifeText.text = "Health: " + _life; 
     }
 
+    public int GetScore()
+    {
+        return _score;
+    }
     void Start()
     {
         _scoreText.text = "Score: " + _score;

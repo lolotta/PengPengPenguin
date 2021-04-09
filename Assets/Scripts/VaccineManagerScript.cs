@@ -8,7 +8,7 @@ public class VaccineManagerScript : MonoBehaviour
     private GameObject _vaccinePrefab;
 
     
-    private float _vaccinationRate = 0.8f;
+    private float _vaccinationRate = 0.6f;
 
     private float _timeToVaccinate = 0f;
 
@@ -28,7 +28,7 @@ public class VaccineManagerScript : MonoBehaviour
     
      public void PowerUp()
         {
-            _vaccinationRate = 0.4f;
+            _vaccinationRate = 0.3f;
             _powerUpOn = true;
             _powerDownAt = Time.time + _powerUpTime;
             
