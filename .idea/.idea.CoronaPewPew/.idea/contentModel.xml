@@ -6,15 +6,11 @@
     <e p="C:\Users\Lotta\Documents\GitHub\CoronaPewPew" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="DNA" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="RotateModel.cs" t="Include" />
-          </e>
-        </e>
         <e p="Scripts" t="Include">
           <e p="BackgroundManagerScript.cs" t="Include" />
           <e p="CloudScript.cs" t="Include" />
           <e p="CoronaScript.cs" t="Include" />
+          <e p="GameSettingsScript.cs" t="Include" />
           <e p="Level_upScript.cs" t="Include" />
           <e p="LevelUpManagerScript.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
@@ -113,6 +109,11 @@
           <e p="Forest road BG" t="Include">
             <e p="READ_ME_" t="Include">
               <e p="READ_ME_.txt" t="Include" />
+            </e>
+          </e>
+          <e p="VertexColorFarmAnimals" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="VertexColorUnlit.shader" t="Include" />
             </e>
           </e>
         </e>

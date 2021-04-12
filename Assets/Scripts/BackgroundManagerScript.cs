@@ -31,40 +31,39 @@ public class BackgroundManagerScript : MonoBehaviour
     [SerializeField] 
     private GameObject _nightForestPrefab;
 
-    private bool _penguinMode = true;
+
+    [SerializeField]
+    private GameObject _gameSettings;
+
+
+    private bool _penguinMode = false;
     private bool _mountainMode = false;
     private bool _forestMode = false;
 
-    public void PenguinMode()
-    {
-        _penguinMode = true;
-    }
-    
-    public void MountainMode()
-    {
-        _mountainMode = true;
-        _penguinMode = false;
-    }
-    
-    public void ForestMode()
-    {
-        _forestMode = true;
-        _mountainMode = false;
-        _penguinMode = false;
-    }
+   
     
     void Start()
     {
-        if (_penguinMode)
+        _gameSettings = GameObject.FindWithTag("gameSettings");
+        if (_gameSettings.GetComponent<GameSettingsScript>().PenguinON())
         {
+            _penguinMode = true;
             Instantiate(_bgPrefab, transform.position, Quaternion.identity, this.transform);
-        } else if (_mountainMode)
+
+
+        } else if (_gameSettings.GetComponent<GameSettingsScript>().MountainOn())
         {
+            _mountainMode = true;
             Instantiate(_bgMountainPrefab, _bgMountainPrefab.transform.position, Quaternion.identity, this.transform);
-        } else if (_forestMode)
+
+        } else if (_gameSettings.GetComponent<GameSettingsScript>().ForestOn())
         {
+            _forestMode = true;
             Instantiate(_bgForestPrefab, _bgForestPrefab.transform.position, Quaternion.identity, this.transform);
+
         }
+        
+        
     }
 
     public void Sunset()

@@ -6,7 +6,8 @@ public class PowerUpScript : MonoBehaviour
 {
     
     private float _speed = 6f;
-    // Start is called before the first frame update
+
+    
     void Start()
     {
         SoundManagerScript.PlaySound("InstantiatePowerUp");

@@ -20,6 +20,8 @@ public class VaccineManagerScript : MonoBehaviour
     private float _powerUpTime = 5f;
 
     private float _powerDownAt;
+    
+    private GameObject _gameSettings;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,20 @@ public class VaccineManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _timeToVaccinate)
         {
             _timeToVaccinate = Time.time + _vaccinationRate;
-            Instantiate(_vaccinePrefab, _player.transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity, this.transform);
+            _gameSettings = GameObject.FindWithTag("gameSettings");
+            if (_gameSettings.GetComponent<GameSettingsScript>().PenguinON())
+            {
+                Instantiate(_vaccinePrefab, _player.transform.position + new Vector3(0.5f, 1.3f, 0f),
+                    Quaternion.identity, this.transform);
+            }
+            else
+            {
+                Instantiate(_vaccinePrefab, _player.transform.position + new Vector3(0f, 1f, 0f),
+                    Quaternion.identity, this.transform);
+
+
+            }
+
             SoundManagerScript.PlaySound("shoot");
 
             

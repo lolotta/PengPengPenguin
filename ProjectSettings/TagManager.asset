@@ -8,6 +8,7 @@ TagManager:
   - vaccine
   - Level-up
   - powerUp
+  - gameSettings
   layers:
   - Default
   - TransparentFX

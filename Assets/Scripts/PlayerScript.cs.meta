@@ -3,7 +3,17 @@ guid: ca9447ec67e6f574492e6f8ae6d70193
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _spawnManager: {instanceID: 0}
+  - _vaccineManager: {instanceID: 0}
+  - _levelUpManager: {instanceID: 0}
+  - _powerUpManager: {instanceID: 0}
+  - _backgroundManager: {instanceID: 0}
+  - _gameSettings: {instanceID: 0}
+  - _penguin: {fileID: 7225806045461156747, guid: 877d1157245544041856a2743a486c14, type: 3}
+  - _sheep: {fileID: 1965851562501010, guid: e82139b3bae6212439ea1e85ad29678b, type: 3}
+  - _cow: {fileID: 1287295899898638, guid: 9ec060093457ad84ca2733cb15c2c41e, type: 3}
+  - _uiManager: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

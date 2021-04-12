@@ -18,19 +18,21 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/VaccineScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PowerUpScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LevelUpManagerScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Level_upScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI_Manager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CloudScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpawnManagerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CoronaScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/VaccineManagerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WaveScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SoundManagerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PowerUpManagerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundManagerScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI_Manager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VaccineManagerScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CloudScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameSettingsScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Level_upScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LevelUpManagerScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PowerUpScript.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qWjKeOjkMMB9LAcSfqsvmNQPk5" />
@@ -83,7 +85,8 @@
       <workItem from="1617615600974" duration="595000" />
       <workItem from="1617713956909" duration="4850000" />
       <workItem from="1617726328554" duration="4452000" />
-      <workItem from="1617884743963" duration="19982000" />
+      <workItem from="1617884743963" duration="38949000" />
+      <workItem from="1618223138106" duration="715000" />
     </task>
     <servers />
   </component>

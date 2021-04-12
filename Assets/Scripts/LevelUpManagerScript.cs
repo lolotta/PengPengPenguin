@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//manages the levelUps that give you a life
 public class LevelUpManagerScript : MonoBehaviour
 {
     // Start is called before the first frame update

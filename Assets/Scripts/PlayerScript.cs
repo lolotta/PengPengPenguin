@@ -11,27 +11,57 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private GameObject _levelUpManager;
     [SerializeField] private GameObject _powerUpManager;
     [SerializeField] private GameObject _backgroundManager;
+    [SerializeField] private GameObject _gameSettings;
 
 
+    
+    [SerializeField] private GameObject _penguin;
+    [SerializeField] private GameObject _sheep;
+    [SerializeField] private GameObject _cow;
+    
+    private bool _penguinMode = false;
+    private bool _mountainMode = false;
+    private bool _forestMode = false;
+
+    
+    
     [SerializeField] public int _lives = 3;
-
-
+    
     [SerializeField] private UI_Manager _uiManager;
 
     void Start()
     {
+        
         transform.position = new Vector3(0, 0, 0);
+        _gameSettings = GameObject.FindWithTag("gameSettings");
+        if (_gameSettings.GetComponent<GameSettingsScript>().PenguinON())
+        {
+            _penguinMode = true;
+            Instantiate(_penguin, transform.position, transform.rotation * Quaternion.Euler (0f, 180f, 0f), this.transform);
+
+        } else if (_gameSettings.GetComponent<GameSettingsScript>().MountainOn())
+        {
+            _mountainMode = true;
+            Instantiate(_sheep, transform.position, transform.rotation * Quaternion.Euler (0f, 180f, 0f), this.transform);
+
+        } else if (_gameSettings.GetComponent<GameSettingsScript>().ForestOn())
+        {
+            _forestMode = true;
+            Instantiate(_cow, transform.position, transform.rotation * Quaternion.Euler (0f, 180f, 0f), this.transform);
+
+        }
+        
     }
 
     void Update()
     {
         PlayerMovement();
-        if (_uiManager.GetScore() == 3)
+        if (_uiManager.GetScore() == 10)
         {
             SoundManagerScript.PlaySound("nextLevel");
             SunsetLevel();
         }
-        if (_uiManager.GetScore() == 96)
+        if (_uiManager.GetScore() == 110)
         {
             SoundManagerScript.PlaySound("nextLevel");
 
@@ -87,11 +117,7 @@ public class PlayerScript : MonoBehaviour
     public void Damage()
     {
         _lives--;
-
-        /*_colorChannel -= 0.5f;
-        _abp.SetColor("_Color", new Color(_colorChannel, 0, _colorChannel, 1f));
-        this.GetComponent<Renderer>().SetPropertyBlock(_abp);*/
-
+        
         if (_lives <= 0)
         {
             if (_spawnManager != null)
@@ -129,6 +155,14 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.LogError("level up manager not assigned, idiot");
             }
+            if (_uiManager != null)
+            {
+                _uiManager.GetComponent<UI_Manager>().PlayerDies();
+            }
+            else
+            {
+                Debug.LogError("ui manager not assigned, idiot");
+            }
 
             SoundManagerScript.PlaySound("die");
 
@@ -154,10 +188,10 @@ public class PlayerScript : MonoBehaviour
                 5f,
                 0);
         }
-        else if (transform.position.y < -3.5f)
+        else if (transform.position.y < -4f)
         {
             transform.position = new Vector3(transform.position.x,
-                -3.5f,
+                -4f,
                 0);
         }
 

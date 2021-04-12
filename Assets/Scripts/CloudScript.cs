@@ -15,7 +15,7 @@ public class CloudScript : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * (_speed * Time.deltaTime));
-        if (transform.position.x > 160)
+        if (transform.position.x > 180)
         {
             transform.position = new Vector3(
                 -60,
